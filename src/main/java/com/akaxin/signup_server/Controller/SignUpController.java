@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class SignUpController {
     @RequestMapping("/signUp")
-    public String signUp(HttpServletRequest request, GroupBean groupBean) {
-
+    public String signUp(HttpServletRequest request) {
+        System.out.println(12312321);
         return null;
     }
 }
