@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Akaxin报名系统</title>
-    <link rel="icon" href="Images/wangyi.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="Images/wangyi.ico" type="image/x-icon"/>
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -14,107 +14,178 @@
 <script src="/js/bootstrap.min.js"></script>
 <br>
 <div class="well" well-large align="center">欢迎来到Akaxin校园社交运营大赛报名系统</div>
-
 <form class="form-search" action="/signUp" align="center" method="post">
+    <div class="alert alert-info">
+        请先填写组长相关信息,便于联系(所有均为必填)
+    </div>
     <table class="table table-striped table-bordered table-condensed">
         <tr>
-            <td style="text-align: right">小组组长名称&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">组长名称&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query" placeholder="the name of the leader"
                        name="leader_name">
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">组长手机号&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">手机号&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query" placeholder="phoneNum of the leader"
                        name="phone_num">
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">组长微信号&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">微信号&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query" placeholder="wechatNum of the leader"
                        name="wechat_num">
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">组长所在班级(全称)&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">所在班级(全称)&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query" placeholder="class of the leader"
                        name="class_name">
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">组长所在年级&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query" placeholder="grade of the leader"
                        name="grade_name">
             </td>
         </tr>
         <tr>
-            <td style="text-align: right">群成员&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#Modal1" id="Modal_1">添加</button>
+            <td style="text-align: right">成员(单击删除)&nbsp;&nbsp;&nbsp;</td>
+            <td class="member_show">
             </td>
         </tr>
+
     </table>
-
-
-    <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">添加参赛成员</h4>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-striped table-bordered table-condensed">
-                        <tr>
-                            <td style="text-align: right">名称&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="text" class="input-medium search-query"
-                                       placeholder="the name of member"
-                                       name="leader_name">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right">手机号&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="text" class="input-medium search-query"
-                                       placeholder="phoneNum of member"
-                                       name="phone_num">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right">微信号&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="text" class="input-medium search-query"
-                                       placeholder="wechatNum of member"
-                                       name="wechat_num">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right">所在班级(全称)&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="text" class="input-medium search-query" placeholder="class of member"
-                                       name="class_name">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
-                            <td><input type="text" class="input-medium search-query" placeholder="grade of member"
-                                       name="grade_name">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">提交</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
+    <div class="alert alert-info">
+        请添加成员,至少三人(所有均为必填)
     </div>
+    <div class="alert alert-error">
+        暂无成员,或群成员少于三人
+    </div>
+    <div class="memberList">
+        <table class="table table-striped table-bordered table-condensed member" id="member_0">
+            <tr>
+                <td style="text-align: right">名称&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" class="input-medium search-query" placeholder="the name of member"
+                           name="leader_name" id="member_name_0">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">手机号&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" class="input-medium search-query" placeholder="phoneNum of member"
+                           name="phone_num">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">微信号&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" class="input-medium search-query" placeholder="wechatNum of member"
+                           name="wechat_num">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">所在班级(全称)&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" class="input-medium search-query" placeholder="class of member"
+                           name="class_name">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text" class="input-medium search-query" placeholder="grade of member"
+                           name="grade_name">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <button class="btn btn-success" type="button" id="addMember"><i class="icon-plus icon-white"></i>&nbsp;添加成员</button>
     <br>
     <br>
-    <input type="submit" class="btn btn-primary">
+    <div class="alert alert-info submit_info" hidden>
+        请确认信息无误,然后提交
+    </div>
+    <input type="hidden" class="btn btn-primary submitForm">
 </form>
+
+
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
 <script type="text/javascript">
- $('#Modal_1').click(function () {
-     this.attr("aria-hidden", true);
- })
+    var count = 1;
+    var member_Num = 'member_0';
+    var memberName_Num = 'member_name_0';
+    $('#addMember').click(function () {
+        var html = '<table class="table table-striped table-bordered table-condensed member" id="member_' + count + '">' +
+            '            <tr>' +
+            '                <td style="text-align: right">名称&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td><input type="text" class="input-medium search-query" placeholder="the name of member"' +
+            '                           name="leader_name" id="member_name_' + count + '">' +
+            '                </td>' +
+            '            </tr>' +
+            '            <tr>' +
+            '                <td style="text-align: right">手机号&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td><input type="text" class="input-medium search-query" placeholder="phoneNum of member"' +
+            '                           name="phone_num">' +
+            '                </td>' +
+            '            </tr>' +
+            '            <tr>' +
+            '                <td style="text-align: right">微信号&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td><input type="text" class="input-medium search-query" placeholder="wechatNum of member"' +
+            '                           name="wechat_num">' +
+            '                </td>' +
+            '            </tr>' +
+            '            <tr>' +
+            '                <td style="text-align: right">所在班级(全称)&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td><input type="text" class="input-medium search-query" placeholder="class of member"' +
+            '                           name="class_name">' +
+            '                </td>' +
+            '            </tr>' +
+            '            <tr>' +
+            '                <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td><input type="text" class="input-medium search-query" placeholder="grade of member"' +
+            '                           name="grade_name">' +
+            '                </td>' +
+            '            </tr>' +
+            '' +
+            '        </table>';
+        var name = $('#' + memberName_Num + '').val();
+        if (isEmpty(name)) {
+            alert("用户名错误");
+            $('#' + memberName_Num + '').val('');
+            return;
+        }
+        var infoButtonHtml = '<button class="btn btn-inverse del" type="button" member_id="' + member_Num + '">' + name + '</button>&nbsp;';
+        $('.member').hide();
+        $('.memberList').append(html);
+        $('.member_show').append(infoButtonHtml);
+        count++;
+        member_Num = 'member_' + (count - 1);
+        memberName_Num = 'member_name_' + (count - 1);
+        if (count == 4) {
+            $('.alert-error').hide();
+            $('.submit_info').show();
+            $('.submitForm').attr("type", "submit");
+        }
+
+    });
+
+    function isEmpty(val) {
+        if (val == null) return true;
+        if (val == undefined || val == 'undefined') return true;
+        if (val == "") return true;
+        if (val.length == 0) return true;
+        if (!/[^(^\s*)|(\s*$)]/.test(val)) return true;
+        return false;
+    }
+
+    $(document).on('click', ".del", function () {
+        var mem_id = $(this).attr('member_id');
+        $('#' + mem_id).remove();
+        $(this).remove();
+        count--;
+        if (count < 4) {
+            $('.alert-error').show();
+            $('.submit_info').hide();
+            $('.submitForm').attr("type", "hidden");
+        }
+    });
 </script>
 
 </body>

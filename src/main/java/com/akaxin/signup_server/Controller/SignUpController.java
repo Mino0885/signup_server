@@ -1,6 +1,5 @@
 package com.akaxin.signup_server.Controller;
 
-import com.akaxin.signup_server.pojo.GroupBean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
