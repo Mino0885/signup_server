@@ -77,8 +77,8 @@ public class GroupBean {
         this.memberList = memberList;
     }
 
-    public GroupBean(int id) {
-        this.id = id;
+    public GroupBean() {
+
     }
 
     public GroupBean(int id, String leader_name, String phone_num, String wechat_num, String class_name, String grade_name, Date create_time, List<MemberBean> memberList) {

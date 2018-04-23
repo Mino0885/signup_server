@@ -76,9 +76,9 @@ public class MemberBean {
         this.group_id = group_id;
     }
 
-    public MemberBean(int id) {
+    public MemberBean() {
 
-        this.id = id;
+
     }
 
     public MemberBean(int id, String member_name, String phone_num, String wechat_num, String class_name, String grade_name, Date add_time, int group_id) {
