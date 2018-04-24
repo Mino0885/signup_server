@@ -20,7 +20,7 @@
     </div>
     <table class="table table-striped table-bordered table-condensed">
         <tr>
-            <td style="text-align: right">组长名称&nbsp;&nbsp;&nbsp;</td>
+            <td style="text-align: right">组长姓名&nbsp;&nbsp;&nbsp;</td>
             <td><input type="text" class="input-medium search-query"
                        name="leader_name">
             </td>
@@ -47,7 +47,6 @@
             <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <select class="input-medium" name="grade_name">
-                    <option value="未填写">---请选择年级---</option>
                     <option value="大一年级">大一年级</option>
                     <option value="大二年级">大二年级</option>
                     <option value="大三年级">大三年级</option>
@@ -71,7 +70,7 @@
     <div class="memberList">
         <table class="table table-striped table-bordered table-condensed member" id="member_0">
             <tr>
-                <td style="text-align: right">名称&nbsp;&nbsp;&nbsp;</td>
+                <td style="text-align: right">姓名&nbsp;&nbsp;&nbsp;</td>
                 <td><input type="text" class="input-medium search-query"
                            name="member_name_0" id="member_name_0">
                 </td>
@@ -98,7 +97,6 @@
                 <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
                 <td>
                     <select class="input-medium" name="grade_name_0">
-                        <option value="未填写">---请选择年级---</option>
                         <option value="大一年级">大一年级</option>
                         <option value="大二年级">大二年级</option>
                         <option value="大三年级">大三年级</option>
@@ -127,7 +125,7 @@
     $('#addMember').click(function () {
         var html = '<table class="table table-striped table-bordered table-condensed member" id="member_' + count + '">' +
             '            <tr>' +
-            '                <td style="text-align: right">名称&nbsp;&nbsp;&nbsp;</td>' +
+            '                <td style="text-align: right">姓名&nbsp;&nbsp;&nbsp;</td>' +
             '                <td><input type="text" class="input-medium search-query" ' +
             '                           name="member_name_' + count + '" id="member_name_' + count + '">' +
             '                </td>' +
@@ -154,7 +152,6 @@
             '                <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>' +
             '<td>' +
             '<select class="input-medium" name="grade_name_' + count + '">' +
-            '<option value="未填写">---请选择年级---</option>' +
             '    <option value="大一年级">大一年级</option>' +
             '    <option value="大二年级">大二年级</option>' +
             '    <option value="大三年级">大三年级</option>' +
