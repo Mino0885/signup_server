@@ -1,8 +1,10 @@
 package com.akaxin.signup_server.Controller;
 
-import com.akaxin.signup_server.Service.Service;
+import com.akaxin.signup_server.Service.SignService;
+import com.akaxin.signup_server.Service.SignServiceImpl;
 import com.akaxin.signup_server.pojo.GroupBean;
 import com.akaxin.signup_server.pojo.MemberBean;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 @RestController
 public class SignUpController {
@@ -22,6 +25,7 @@ public class SignUpController {
         String grade_name = request.getParameter("grade_name");
         Map<String, Object> signTable = new HashMap<>();
         GroupBean groupBean = new GroupBean();
+        groupBean.setId(UUID.randomUUID().toString());
         groupBean.setLeader_name(leader_name);
         groupBean.setPhone_num(phone_num);
         groupBean.setWechat_num(wechat_num);
@@ -42,6 +46,7 @@ public class SignUpController {
             signTable.put("member_" + count, memberBean);
         }
         signTable.put("size", memberSize);
-        Service service = new Service();
+        SignService service = new SignServiceImpl();
+        boolean flage = service.saveGroup(signTable);
     }
 }

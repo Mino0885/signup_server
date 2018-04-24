@@ -45,8 +45,25 @@
         </tr>
         <tr>
             <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
-            <td><input type="text" class="input-medium search-query" placeholder="grade of the leader"
-                       name="grade_name">
+            <td>
+                &nbsp;&nbsp;&nbsp; <input type="radio" class="radio-button"
+                                          placeholder="grade of the leader"
+                                          value="大一年级"
+                                          name="grade_name">大一年级<br>
+
+                &nbsp;&nbsp;&nbsp; <input type="radio" class="radio-button"
+                                          placeholder="grade of the leader"
+                                          value="大二年级"
+                                          name="grade_name">大二年级<br>
+                &nbsp;&nbsp;&nbsp; <input type="radio" class="radio-button"
+                                          placeholder="grade of the leader"
+                                          value="大三年级"
+                                          name="grade_name">大三年级<br>
+                &nbsp;&nbsp;&nbsp; <input type="radio"
+                                          class="radio-button"
+                                          placeholder="grade of the leader"
+                                          value="大四年级"
+                                          name="grade_name">大四年级<br>
             </td>
         </tr>
         <tr>
@@ -90,8 +107,19 @@
             </tr>
             <tr>
                 <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>
-                <td><input type="text" class="input-medium search-query" placeholder="grade of member"
-                           name="grade_name_0">
+                <td>
+                    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"
+                                             placeholder="grade of member" value="大一年级"
+                                             name="grade_name_0">大一年级<br>
+                    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"
+                                             placeholder="grade of member" value="大二年级"
+                                             name="grade_name_0">大二年级<br>
+                    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"
+                                             placeholder="grade of member" value="大三年级"
+                                             name="grade_name_0">大三年级<br>
+                    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"
+                                             placeholder="grade of member" value="大四年级"
+                                             name="grade_name_0">大四年级<br>
                 </td>
             </tr>
         </table>
@@ -140,12 +168,23 @@
             '            </tr>' +
             '            <tr>' +
             '                <td style="text-align: right">所在年级&nbsp;&nbsp;&nbsp;</td>' +
-            '                <td><input type="text" class="input-medium search-query" placeholder="grade of member"' +
-            '                           name="grade_name_' + count + '">' +
-            '                </td>' +
-            '            </tr>' +
-            '' +
-            '        </table>';
+            '<td>' +
+            '    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"' +
+            '                             placeholder="grade of member" value="大一年级"' +
+            '                             name="grade_name_0">大一年级<br>' +
+            '    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"' +
+            '                              placeholder="grade of member" value="大二年级"' +
+            '                              name="grade_name_0">大二年级<br>' +
+            '    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"' +
+            '                              placeholder="grade of member" value="大三年级"' +
+            '                              name="grade_name_0">大三年级<br>' +
+            '    &nbsp;&nbsp;&nbsp;<input type="radio" class="input-medium search-query"' +
+            '                              placeholder="grade of member" value="大四年级"' +
+            '                              name="grade_name_0">大四年级<br>' +
+            '</td>'
+        '            </tr>' +
+        '' +
+        '        </table>';
         var name = $('#' + memberName_Num + '').val();
         if (isEmpty(name)) {
             alert("用户名错误");
@@ -157,7 +196,7 @@
         $('.memberList').append(html);
         $('.member_show').append(infoButtonHtml);
         count++;
-        $('#membeiSize').attr("value", count-1);
+        $('#membeiSize').attr("value", count - 1);
         member_Num = 'member_' + (count - 1);
         memberName_Num = 'member_name_' + (count - 1);
         if (count == 4) {
@@ -182,7 +221,7 @@
         $('#' + mem_id).remove();
         $(this).remove();
         count--;
-        $('#membeiSize').attr("value", count-1);
+        $('#membeiSize').attr("value", count - 1);
         if (count < 4) {
             $('.alert-error').show();
             $('.submit_info').hide();

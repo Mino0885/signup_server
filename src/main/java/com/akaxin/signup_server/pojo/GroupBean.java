@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 public class GroupBean {
-    private int id;
+    private String id;
     private String leader_name;
     private String phone_num;
     private String wechat_num;
@@ -13,11 +13,11 @@ public class GroupBean {
     private Date create_time;
     private List<MemberBean> memberList;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -81,7 +81,7 @@ public class GroupBean {
 
     }
 
-    public GroupBean(int id, String leader_name, String phone_num, String wechat_num, String class_name, String grade_name, Date create_time, List<MemberBean> memberList) {
+    public GroupBean(String id, String leader_name, String phone_num, String wechat_num, String class_name, String grade_name, Date create_time, List<MemberBean> memberList) {
 
         this.id = id;
         this.leader_name = leader_name;
