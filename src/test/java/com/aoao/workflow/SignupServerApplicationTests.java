@@ -1,4 +1,4 @@
-package com.akaxin.signup_server;
+package com.aoao.workflow;
 
 import org.junit.Test;
 

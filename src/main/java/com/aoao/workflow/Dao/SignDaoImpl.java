@@ -1,7 +1,7 @@
-package com.akaxin.signup_server.Dao;
+package com.aoao.workflow.Dao;
 
-import com.akaxin.signup_server.pojo.GroupBean;
-import com.akaxin.signup_server.pojo.MemberBean;
+import com.aoao.workflow.pojo.GroupBean;
+import com.aoao.workflow.pojo.MemberBean;
 
 import java.sql.*;
 import java.util.Map;

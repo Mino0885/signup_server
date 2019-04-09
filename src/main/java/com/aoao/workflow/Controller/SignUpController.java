@@ -1,10 +1,9 @@
-package com.akaxin.signup_server.Controller;
+package com.aoao.workflow.Controller;
 
-import com.akaxin.signup_server.Service.SignService;
-import com.akaxin.signup_server.Service.SignServiceImpl;
-import com.akaxin.signup_server.pojo.GroupBean;
-import com.akaxin.signup_server.pojo.MemberBean;
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.aoao.workflow.Service.SignService;
+import com.aoao.workflow.Service.SignServiceImpl;
+import com.aoao.workflow.pojo.GroupBean;
+import com.aoao.workflow.pojo.MemberBean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

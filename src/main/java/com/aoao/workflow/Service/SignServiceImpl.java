@@ -1,7 +1,7 @@
-package com.akaxin.signup_server.Service;
+package com.aoao.workflow.Service;
 
-import com.akaxin.signup_server.Dao.SignDao;
-import com.akaxin.signup_server.Dao.SignDaoImpl;
+import com.aoao.workflow.Dao.SignDao;
+import com.aoao.workflow.Dao.SignDaoImpl;
 
 import java.util.Map;
 
